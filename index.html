@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>miniMDM — A minimal, open-source Master Data Management app</title>
+<meta name="description" content="Define data objects in YAML, manage records through a clean web UI or REST API, with full versioning, audit log, and role-based access control. Self-hosted, MIT licensed, zero telemetry." />
+<meta property="og:title" content="miniMDM — A minimal, open-source Master Data Management app" />
+<meta property="og:description" content="Self-hosted MDM with versioning, audit log, RBAC and a REST API. Define your schema in YAML. MIT licensed. Zero telemetry." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+
+<!-- =================== Header =================== -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#top">
+      <span><b>mini</b><i>MDM</i></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#tour">Screenshots</a>
+      <a href="#compare">Compare</a>
+      <a href="#open-source">Open source</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" id="theme-btn"></button>
+      <a class="header-cta" href="https://github.com/planemarlin/minimdm" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        Star on GitHub
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- =================== Hero =================== -->
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="hero__eyebrow"><span class="dot"></span> <span id="hero-version">v0.3.1</span> · MIT licensed</span>
+      <h1 class="hero__title">Master data management, <em>without the mainframe.</em></h1>
+      <p class="hero__lede">
+        miniMDM is a minimal, self-hosted application for curating the records your business runs on — customers, products, locations, anything. Define your schema in YAML, edit through a clean web UI or REST API, and get versioning, audit trails and access control out of the box.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/planemarlin/minimdm" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          View on GitHub
+        </a>
+        <a class="btn btn-secondary" href="https://github.com/planemarlin/minimdm/blob/main/docs/quickstart.md" target="_blank" rel="noopener">
+          Read the quickstart
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="trust-row" aria-label="Trust signals">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Self-hosted</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> MIT licensed</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Zero telemetry</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> PostgreSQL-backed</span>
+      </div>
+    </div>
+
+    <div class="hero__frame-wrap">
+      <div class="frame" id="hero-frame">
+        <div class="frame__chrome">
+          <span class="frame__dots"><span></span><span></span><span></span></span>
+          <span class="frame__url">mdm.internal.example.com</span>
+        </div>
+        <div class="frame__body">
+          <img id="hero-screenshot" src="assets/screens/1-main.png" alt="miniMDM dashboard showing schemas and object counts" loading="eager" />
+        </div>
+      </div>
+      <div class="hero__badges">
+        <div class="hero__badge">
+          <span class="pulse" aria-hidden="true"></span>
+          <span><strong>Audit log</strong> tracks every change</span>
+        </div>
+        <div class="hero__badge">
+          <span class="kbd">YAML</span>
+          <span>Define your schema in one file</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== Features =================== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">What's inside</div>
+      <h2 class="section-title">Everything you need to govern a golden record — nothing you don't.</h2>
+      <p class="section-lede">miniMDM ships the primitives that serious master-data work actually requires. No vendor upgrades, no per-seat licensing, no modules to buy separately.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature feature--wide">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </div>
+        <h3 class="feature__title">Schema as code</h3>
+        <p class="feature__body">Define every data object — fields, types, references, required flags — in a single YAML or JSON config file. Version it in Git alongside the rest of your infrastructure.</p>
+      </article>
+
+      <article class="feature feature--wide">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3 class="feature__title">Full record versioning</h3>
+        <p class="feature__body">Every edit writes a new version. Browse the complete history of any record, diff what changed, and revert to any prior state — no backup tape required.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4z"/><path d="M8 7h.01M8 17h.01"/></svg>
+        </div>
+        <h3 class="feature__title">Complete audit log</h3>
+        <p class="feature__body">What changed, who changed it, when, and why — searchable and filterable.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <h3 class="feature__title">Role-based access</h3>
+        <p class="feature__body">JWT auth with admin/user roles and per-schema read &amp; write grants.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 21h16"/></svg>
+        </div>
+        <h3 class="feature__title">Bulk import / export</h3>
+        <p class="feature__body">CSV, TSV and JSON round-trips, with optional upsert-by-key.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+        <h3 class="feature__title">Full-text search</h3>
+        <p class="feature__body">Search within any object. Sortable columns and sorted dropdowns keep forms usable.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M6 8h10a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H6"/><path d="M18 14v0a2 2 0 0 1-2 2H6"/></svg>
+        </div>
+        <h3 class="feature__title">References &amp; hierarchies</h3>
+        <p class="feature__body">Cross-object references and parent-child relations, surfaced inline on the detail view.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 10h16"/><circle cx="7" cy="8" r=".5" fill="currentColor"/></svg>
+        </div>
+        <h3 class="feature__title">Auto-generated REST API</h3>
+        <p class="feature__body">Every object gets a documented endpoint and OpenAPI spec — automatically.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== Screenshot tour =================== -->
+<section class="section section--muted" id="tour">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">A guided tour</div>
+      <h2 class="section-title">See what working in miniMDM actually looks like.</h2>
+      <p class="section-lede">No marketing mock-ups — these are the real screens, captured from the live app.</p>
+    </div>
+
+    <div class="tour">
+      <div class="tour__tabs" role="tablist" aria-label="Screenshot tour">
+        <button class="tour__tab is-active" role="tab" aria-selected="true" aria-controls="panel-records" data-tour="records">
+          <span class="tour__tab-num">01</span>
+          <span>
+            <span class="tour__tab-title">Records list</span>
+            <span class="tour__tab-body">Sort, search and page through any object.</span>
+          </span>
+        </button>
+        <button class="tour__tab" role="tab" aria-selected="false" aria-controls="panel-details" data-tour="details">
+          <span class="tour__tab-num">02</span>
+          <span>
+            <span class="tour__tab-title">Detail view</span>
+            <span class="tour__tab-body">All fields, related records, and actions on one page.</span>
+          </span>
+        </button>
+        <button class="tour__tab" role="tab" aria-selected="false" aria-controls="panel-history" data-tour="history">
+          <span class="tour__tab-num">03</span>
+          <span>
+            <span class="tour__tab-title">Version history</span>
+            <span class="tour__tab-body">Every prior version, with a one-click revert.</span>
+          </span>
+        </button>
+        <button class="tour__tab" role="tab" aria-selected="false" aria-controls="panel-audit" data-tour="audit">
+          <span class="tour__tab-num">04</span>
+          <span>
+            <span class="tour__tab-title">Audit log</span>
+            <span class="tour__tab-body">Who, what, when, why — across every schema.</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="tour__stage">
+        <div class="tour__panel is-active" id="panel-records" role="tabpanel" aria-labelledby="tab-records" data-tour-panel="records">
+          <div class="frame">
+            <div class="frame__chrome">
+              <span class="frame__dots"><span></span><span></span><span></span></span>
+              <span class="frame__url">mdm.internal.example.com / projects / records</span>
+              <span class="frame__modeswitch" role="tablist" aria-label="Preview theme">
+                <button class="is-active" data-tour-mode="light" type="button">Light</button>
+                <button data-tour-mode="dark" type="button">Dark</button>
+              </span>
+            </div>
+            <div class="frame__body">
+              <img data-tour-img="records"
+                   data-light="assets/screens/2a-records-light.png"
+                   data-dark="assets/screens/2b-records-dark.png"
+                   src="assets/screens/2a-records-light.png"
+                   alt="A sortable list of project records with search, pagination and badge tags" />
+            </div>
+          </div>
+          <p class="tour__caption"><span class="badge">01</span> Records list — sortable columns, full-text search and bulk actions on every object.</p>
+        </div>
+
+        <div class="tour__panel" id="panel-details" role="tabpanel" aria-labelledby="tab-details" data-tour-panel="details">
+          <div class="frame">
+            <div class="frame__chrome">
+              <span class="frame__dots"><span></span><span></span><span></span></span>
+              <span class="frame__url">mdm.internal.example.com / projects / records / 42</span>
+            </div>
+            <div class="frame__body">
+              <img src="assets/screens/3-details.png" alt="Record detail view with fields grouped into sections and related objects below" />
+            </div>
+          </div>
+          <p class="tour__caption"><span class="badge">02</span> Detail view — fields grouped into sections with child records and back-references inline.</p>
+        </div>
+
+        <div class="tour__panel" id="panel-history" role="tabpanel" aria-labelledby="tab-history" data-tour-panel="history">
+          <div class="frame">
+            <div class="frame__chrome">
+              <span class="frame__dots"><span></span><span></span><span></span></span>
+              <span class="frame__url">mdm.internal.example.com / projects / records / 42 / history</span>
+            </div>
+            <div class="frame__body">
+              <img src="assets/screens/4-record-history.png" alt="Version history timeline for a single record, with insert/update/revert badges" />
+            </div>
+          </div>
+          <p class="tour__caption"><span class="badge">03</span> Version history — every edit stored forever, any version revertable in one click.</p>
+        </div>
+
+        <div class="tour__panel" id="panel-audit" role="tabpanel" aria-labelledby="tab-audit" data-tour-panel="audit">
+          <div class="frame">
+            <div class="frame__chrome">
+              <span class="frame__dots"><span></span><span></span><span></span></span>
+              <span class="frame__url">mdm.internal.example.com / audit</span>
+            </div>
+            <div class="frame__body">
+              <img src="assets/screens/5-audit-log.png" alt="System-wide audit log listing user actions with timestamps and filters" />
+            </div>
+          </div>
+          <p class="tour__caption"><span class="badge">04</span> Audit log — a filterable trail of every action across every schema and user.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== Compare =================== -->
+<section class="section" id="compare">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Where it fits</div>
+      <h2 class="section-title">The sweet spot between a shared spreadsheet and a six-figure MDM platform.</h2>
+      <p class="section-lede">If your reference data has outgrown a spreadsheet but doesn't need a multi-year rollout, you're exactly who miniMDM is for.</p>
+    </div>
+
+    <div class="compare" role="region" aria-label="Comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Shared spreadsheet</th>
+            <th scope="col" class="is-highlight">miniMDM</th>
+            <th scope="col">Enterprise MDM suite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time to first record</td>
+            <td class="col-mark">Minutes</td>
+            <td class="col-mark is-highlight"><span class="mark-yes">Minutes</span></td>
+            <td class="col-mark">Weeks to months</td>
+          </tr>
+          <tr>
+            <td>Record-level versioning</td>
+            <td class="col-mark mark-no">—</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Full audit log (who / what / why)</td>
+            <td class="col-mark mark-no">—</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Role &amp; schema-level access control</td>
+            <td class="col-mark mark-partial">Sheet-level</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-yes">✓</td>
+          </tr>
+          <tr>
+            <td>REST API + OpenAPI spec</td>
+            <td class="col-mark mark-no">—</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Schema defined as code (Git-tracked)</td>
+            <td class="col-mark mark-no">—</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-partial">Usually UI-only</td>
+          </tr>
+          <tr>
+            <td>Self-hosted, no vendor lock-in</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-no">—</td>
+          </tr>
+          <tr class="is-highlight">
+            <td>Cost</td>
+            <td class="col-mark">$0 (with caveats)</td>
+            <td class="col-mark"><strong>Free &amp; MIT licensed</strong></td>
+            <td class="col-mark">$$$ per seat, per year</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== Open source =================== -->
+<section class="section section--muted" id="open-source">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Open source</div>
+      <h2 class="section-title">Free to use, free to extend, free to audit.</h2>
+      <p class="section-lede">miniMDM is MIT licensed and lives entirely on your own infrastructure. Clone the repo, run it with Docker, read every line of the source.</p>
+    </div>
+
+    <div class="oss">
+      <div class="oss__left">
+        <div class="stat-row" style="margin-top:0;">
+          <div class="stat"><b>MIT</b><span>License</span></div>
+          <div class="stat"><b id="oss-version">0.3.1</b><span>Latest release</span></div>
+          <div class="stat"><b>0</b><span>Telemetry calls</span></div>
+          <div class="stat"><b>PostgreSQL</b><span>Backend</span></div>
+        </div>
+
+        <div style="height:24px;"></div>
+
+        <p style="color:var(--text-muted); font-size:.95rem; max-width:44ch;">
+          Built on FastAPI, SQLAlchemy and PostgreSQL. Every change is tracked through Alembic migrations; every request gets a correlated log line. Deploy it on your laptop, a homelab VM, or behind your company's reverse proxy.
+        </p>
+
+        <div class="cta-row" style="margin-top:20px; margin-bottom:0;">
+          <a class="btn btn-primary" href="https://github.com/planemarlin/minimdm/blob/main/docs/docker-setup.md" target="_blank" rel="noopener">
+            Docker setup guide
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/planemarlin/minimdm/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing guide</a>
+        </div>
+      </div>
+
+      <div class="oss__right" aria-label="Quickstart commands">
+        <div><span class="c-comment"># Clone and run with Docker</span></div>
+        <div><span class="c-prompt">$</span><span class="c-cmd">git clone</span> https://github.com/planemarlin/minimdm</div>
+        <div><span class="c-prompt">$</span><span class="c-cmd">cd</span> <span class="c-path">minimdm</span></div>
+        <div><span class="c-prompt">$</span><span class="c-cmd">cp</span> config/minimdm.example.yaml config/minimdm.yaml</div>
+        <div><span class="c-prompt">$</span><span class="c-cmd">docker compose</span> up -d</div>
+        <div style="height:.6rem;"></div>
+        <div><span class="c-comment"># → http://localhost:8000</span></div>
+        <div><span class="c-comment"># → http://localhost:8000/docs  (OpenAPI)</span></div>
+        <div style="height:.6rem;"></div>
+        <div><span class="c-ok">✓ server started</span></div>
+        <div><span class="c-ok">✓ migrations applied</span></div>
+        <div><span class="c-ok">✓ schemas loaded from config/minimdm.yaml</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== Footer =================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="#top">
+          <span><b>mini</b><i>MDM</i></span>
+        </a>
+        <p>A minimal, lightweight, open-source Master Data Management application. Self-hosted. Zero telemetry. MIT licensed.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/quickstart.md" target="_blank" rel="noopener">Quickstart</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/installation.md" target="_blank" rel="noopener">Installation</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/docker-setup.md" target="_blank" rel="noopener">Docker setup</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/deployment.md" target="_blank" rel="noopener">Deployment</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/reference.md" target="_blank" rel="noopener">Feature &amp; API reference</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Operate</h4>
+        <ul>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/migrations.md" target="_blank" rel="noopener">Migrations</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/backup-restore.md" target="_blank" rel="noopener">Backup &amp; restore</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/logging.md" target="_blank" rel="noopener">Logging</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/docs/troubleshooting.md" target="_blank" rel="noopener">Troubleshooting</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/planemarlin/minimdm" target="_blank" rel="noopener">Repository</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/releases" target="_blank" rel="noopener">Releases</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/Changelog.md" target="_blank" rel="noopener">Changelog</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a></li>
+          <li><a href="https://github.com/planemarlin/minimdm/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> planemarlin / miniMDM contributors.</span>
+      <span class="sep">·</span>
+      <span>Released under the MIT License.</span>
+      <span class="sep">·</span>
+      <a href="https://github.com/planemarlin/minimdm" target="_blank" rel="noopener">github.com/planemarlin/minimdm</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle (persisted)
+  const saved = localStorage.getItem('minimdm-theme');
+  if (saved) document.documentElement.dataset.theme = saved;
+
+  document.getElementById('theme-btn').addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('minimdm-theme', next); } catch (e) {}
+  });
+
+  // Tour tabs
+  document.querySelectorAll('.tour__tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tour;
+      document.querySelectorAll('.tour__tab').forEach(t => {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('.tour__panel').forEach(p => {
+        p.classList.toggle('is-active', p.dataset.tourPanel === target);
+      });
+    });
+  });
+
+  // Tour records light/dark switcher
+  document.querySelectorAll('[data-tour-mode]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-tour-mode]').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const img = document.querySelector('[data-tour-img="records"]');
+      img.src = btn.dataset.tourMode === 'dark' ? img.dataset.dark : img.dataset.light;
+    });
+  });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Latest release version from GitHub (cached 1 hour)
+  (function () {
+    const CACHE_KEY = 'minimdm-release';
+    const CACHE_TTL = 60 * 60 * 1000;
+    function applyVersion(tag) {
+      const clean = tag.replace(/^v/, '');
+      document.getElementById('hero-version').textContent = tag;
+      document.getElementById('oss-version').textContent = clean;
+    }
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (cached && Date.now() - cached.ts < CACHE_TTL) {
+        applyVersion(cached.tag);
+        return;
+      }
+    } catch (e) {}
+    fetch('https://api.github.com/repos/planemarlin/minimdm/releases/latest')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data || !data.tag_name) return;
+        applyVersion(data.tag_name);
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ tag: data.tag_name, ts: Date.now() })); } catch (e) {}
+      })
+      .catch(() => {});
+  })();
+</script>
+
+</body>
+</html>
