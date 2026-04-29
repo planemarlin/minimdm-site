@@ -130,15 +130,16 @@ button { font: inherit; cursor: pointer; }
   border-radius: var(--radius);
   width: 32px;
   height: 32px;
-  display: inline-grid;
-  place-items: center;
-  font-size: .9rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
 }
 .theme-toggle:hover { color: #fff; border-color: #64748b; }
-.theme-toggle::before { content: "☾"; }
-[data-theme="dark"] .theme-toggle::before { content: "☀"; }
+.theme-toggle svg { width: 15px; height: 15px; flex-shrink: 0; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 
 .header-cta {
   display: inline-flex;
@@ -548,7 +549,8 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden;
   box-shadow: var(--shadow);
 }
-.compare table { width: 100%; border-collapse: collapse; }
+.compare__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.compare table { width: 100%; border-collapse: collapse; min-width: 560px; }
 .compare th, .compare td {
   padding: 14px 18px;
   text-align: left;
@@ -588,7 +590,7 @@ button { font: inherit; cursor: pointer; }
   grid-template-columns: 1.1fr 1fr;
   box-shadow: var(--shadow);
 }
-.oss__left { padding: 44px 40px; }
+.oss__left { padding: 44px 40px; overflow-wrap: break-word; }
 .oss__right {
   background: var(--sidebar-bg);
   color: #e2e8f0;
@@ -596,6 +598,9 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--mono);
   font-size: .82rem;
   line-height: 1.7;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
 }
 .oss__right .c-prompt { color: #64748b; margin-right: .5rem; user-select: none; }
 .oss__right .c-comment { color: #64748b; }
@@ -627,6 +632,8 @@ button { font: inherit; cursor: pointer; }
 }
 .footer a { color: #cbd5e1; }
 .footer a:hover { color: #fff; text-decoration: none; }
+.footer .brand b { color: #fff; }
+.footer .brand i { color: #64748b; }
 .footer__grid {
   display: grid;
   grid-template-columns: 1.5fr repeat(3, 1fr);
