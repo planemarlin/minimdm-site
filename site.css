@@ -448,14 +448,16 @@ button { font: inherit; cursor: pointer; }
   color: var(--text-muted);
   line-height: 1.55;
 }
-/* Feature layout: 2 tall rows of 6 small + 2 wide emphasised */
+/* Feature layout: 2 wide emphasised + 1 full-width highlight + regular grid */
 .feature--wide { grid-column: span 6; }
+.feature--full { grid-column: span 12; }
 
 @media (max-width: 900px) {
   .feature, .feature--wide { grid-column: span 6; }
+  .feature--full { grid-column: span 12; }
 }
 @media (max-width: 640px) {
-  .feature, .feature--wide { grid-column: span 12; }
+  .feature, .feature--wide, .feature--full { grid-column: span 12; }
 }
 
 /* ========================================================= */

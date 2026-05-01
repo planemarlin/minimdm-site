@@ -117,6 +117,14 @@
         <p class="feature__body">Every edit writes a new version. Browse the complete history of any record, diff what changed, and revert to any prior state — no backup tape required.</p>
       </article>
 
+      <article class="feature feature--full">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/></svg>
+        </div>
+        <h3 class="feature__title">Record lifecycle management</h3>
+        <p class="feature__body">Move records through draft → active → retired states without breaking API consumers. Edits create an isolated draft copy; publishing promotes it back to the master record. Retired records are excluded from default API responses but never deleted. Webhook callbacks fire on every transition so downstream systems stay in sync.</p>
+      </article>
+
       <article class="feature">
         <div class="feature__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4z"/><path d="M8 7h.01M8 17h.01"/></svg>
@@ -130,7 +138,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         </div>
         <h3 class="feature__title">Role-based access</h3>
-        <p class="feature__body">JWT auth with admin/user roles and per-schema read &amp; write grants.</p>
+        <p class="feature__body">Four permission tiers — Viewer, Editor, Publisher, Admin — with per-schema grants for fine-grained control over who can read, write, or promote records.</p>
       </article>
 
       <article class="feature">
@@ -304,6 +312,12 @@
           </tr>
           <tr>
             <td>Record-level versioning</td>
+            <td class="col-mark mark-no">—</td>
+            <td class="col-mark mark-yes">✓</td>
+            <td class="col-mark mark-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Lifecycle states (draft / active / retired)</td>
             <td class="col-mark mark-no">—</td>
             <td class="col-mark mark-yes">✓</td>
             <td class="col-mark mark-yes">✓</td>
