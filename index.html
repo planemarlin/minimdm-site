@@ -51,7 +51,7 @@
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="hero__eyebrow"><span class="dot"></span> <span id="hero-version">v0.3.1</span> · MIT licensed</span>
+      <span class="hero__eyebrow"><span class="dot"></span> <span id="hero-version">v0.5.0</span> · MIT licensed</span>
       <h1 class="hero__title">Master data management, <em>without the mainframe.</em></h1>
       <p class="hero__lede">
         miniMDM is a minimal, self-hosted application for curating the records your business runs on — customers, products, locations, anything. Define your schema in YAML, edit through a clean web UI or REST API, and get versioning, audit trails and access control out of the box.
@@ -126,12 +126,20 @@
         <p class="feature__body">Every edit writes a new version. Browse the complete history of any record, diff what changed, and revert to any prior state — no backup tape required.</p>
       </article>
 
-      <article class="feature feature--full">
+      <article class="feature feature--wide">
         <div class="feature__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/></svg>
         </div>
         <h3 class="feature__title">Record lifecycle management</h3>
-        <p class="feature__body">Move records through draft → active → retired states without breaking API consumers. Edits create an isolated draft copy; publishing promotes it back to the master record. Retired records are excluded from default API responses but never deleted. Webhook callbacks fire on every transition so downstream systems stay in sync.</p>
+        <p class="feature__body">Move records through draft → active → retired states without breaking API consumers. Edits create an isolated draft copy; publishing promotes it back to the golden master record. Retired records are excluded from default API responses but never deleted. Governance rules can enforce draft review before activation, prevent retirement of stable reference data, or require explicit approval for bulk imports. Webhook callbacks fire on every transition so downstream systems stay in sync.</p>
+      </article>
+
+      <article class="feature feature--wide">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="feature__title">Source &amp; provenance tracking</h3>
+        <p class="feature__body">Every golden record carries its origin — which source system it came from (ERP, CRM, warehouse, or any other upstream) and its ID in that system. Provenance is captured at import or creation, preserved in every history snapshot, and filterable from both the UI and API. Know not just what your master data says, but exactly where it came from.</p>
       </article>
 
       <article class="feature">
@@ -387,7 +395,7 @@
       <div class="oss__left">
         <div class="stat-row" style="margin-top:0;">
           <div class="stat"><b>MIT</b><span>License</span></div>
-          <div class="stat"><b id="oss-version">0.4.0</b><span>Latest release</span></div>
+          <div class="stat"><b id="oss-version">0.5.0</b><span>Latest release</span></div>
           <div class="stat"><b>0</b><span>Telemetry calls</span></div>
           <div class="stat"><b>PostgreSQL</b><span>Backend</span></div>
         </div>
