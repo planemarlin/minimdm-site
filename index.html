@@ -51,7 +51,7 @@
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="hero__eyebrow"><span class="dot"></span> <span id="hero-version">v0.5.0</span> · MIT licensed</span>
+      <span class="hero__eyebrow"><span class="dot"></span> v0.6.0 · MIT licensed</span>
       <h1 class="hero__title">Master data management, <em>without the mainframe.</em></h1>
       <p class="hero__lede">
         miniMDM is a minimal, self-hosted application for curating the records your business runs on — customers, products, locations, anything. Define your schema in YAML, edit through a clean web UI or REST API, and get versioning, audit trails and access control out of the box.
@@ -115,7 +115,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
         </div>
         <h3 class="feature__title">Schema as code</h3>
-        <p class="feature__body">Define every data object — fields, types, references, required flags — in a single YAML or JSON config file. Version it in Git alongside the rest of your infrastructure.</p>
+        <p class="feature__body">Define every data object — fields, types, references, required flags — in a single YAML or JSON config file. Assign an owner and steward to each object for governance accountability. Version it in Git alongside the rest of your infrastructure.</p>
       </article>
 
       <article class="feature feature--wide">
@@ -395,7 +395,7 @@
       <div class="oss__left">
         <div class="stat-row" style="margin-top:0;">
           <div class="stat"><b>MIT</b><span>License</span></div>
-          <div class="stat"><b id="oss-version">0.5.0</b><span>Latest release</span></div>
+          <div class="stat"><b>0.6.0</b><span>Latest release</span></div>
           <div class="stat"><b>0</b><span>Telemetry calls</span></div>
           <div class="stat"><b>PostgreSQL</b><span>Backend</span></div>
         </div>
@@ -528,31 +528,6 @@
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Latest release version from GitHub (cached 1 hour)
-  (function () {
-    const CACHE_KEY = 'minimdm-release';
-    const CACHE_TTL = 60 * 60 * 1000;
-    function applyVersion(tag) {
-      const clean = tag.replace(/^v/, '');
-      document.getElementById('hero-version').textContent = tag;
-      document.getElementById('oss-version').textContent = clean;
-    }
-    try {
-      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-      if (cached && Date.now() - cached.ts < CACHE_TTL) {
-        applyVersion(cached.tag);
-        return;
-      }
-    } catch (e) {}
-    fetch('https://api.github.com/repos/planemarlin/minimdm/releases/latest')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (!data || !data.tag_name) return;
-        applyVersion(data.tag_name);
-        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ tag: data.tag_name, ts: Date.now() })); } catch (e) {}
-      })
-      .catch(() => {});
-  })();
 </script>
 
 <!-- Cloudflare Web Analytics -->
