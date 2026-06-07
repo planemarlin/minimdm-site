@@ -33,7 +33,7 @@ Then open [http://localhost:8181](http://localhost:8181).
 
 Drop the files on any static hosting provider (GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a plain web server). No server-side processing is needed.
 
-The latest release version is fetched at runtime from the GitHub API and cached in `localStorage` for one hour, so the version badge stays current without a rebuild.
+The release version is updated manually in `index.html` on each release (two static strings: the hero eyebrow and the OSS stats block).
 
 ## Contributing
 

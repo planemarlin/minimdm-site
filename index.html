@@ -37,9 +37,8 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
-      <a class="header-cta" href="https://github.com/planemarlin/minimdm" target="_blank" rel="noopener">
+      <a class="nav-github" href="https://github.com/planemarlin/minimdm" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        Star on GitHub
       </a>
     </nav>
   </div>
@@ -51,7 +50,7 @@
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="hero__eyebrow"><span class="dot"></span> v0.6.0 · MIT licensed</span>
+      <span class="hero__eyebrow"><span class="dot"></span> v0.6.1 · MIT licensed</span>
       <h1 class="hero__title">Master data management, <em>without the mainframe.</em></h1>
       <p class="hero__lede">
         miniMDM is a minimal, self-hosted application for curating the records your business runs on — customers, products, locations, anything. Define your schema in YAML, edit through a clean web UI or REST API, and get versioning, audit trails and access control out of the box.
@@ -262,9 +261,17 @@
             <div class="frame__chrome">
               <span class="frame__dots"><span></span><span></span><span></span></span>
               <span class="frame__url">mdm.internal.example.com / projects / records / 42</span>
+              <span class="frame__modeswitch" role="tablist" aria-label="Preview theme">
+                <button class="is-active" data-tour-mode="light" type="button">Light</button>
+                <button data-tour-mode="dark" type="button">Dark</button>
+              </span>
             </div>
             <div class="frame__body">
-              <img src="assets/screens/3-details.png" alt="Record detail view with fields grouped into sections and related objects below" />
+              <img data-tour-img="details"
+                   data-light="assets/screens/3a-details-light.png"
+                   data-dark="assets/screens/3b-details-dark.png"
+                   src="assets/screens/3a-details-light.png"
+                   alt="Record detail view with fields grouped into sections and related objects below" />
             </div>
           </div>
           <p class="tour__caption"><span class="badge">02</span> Detail view — fields grouped into sections with child records and back-references inline.</p>
@@ -275,9 +282,17 @@
             <div class="frame__chrome">
               <span class="frame__dots"><span></span><span></span><span></span></span>
               <span class="frame__url">mdm.internal.example.com / projects / records / 42 / history</span>
+              <span class="frame__modeswitch" role="tablist" aria-label="Preview theme">
+                <button class="is-active" data-tour-mode="light" type="button">Light</button>
+                <button data-tour-mode="dark" type="button">Dark</button>
+              </span>
             </div>
             <div class="frame__body">
-              <img src="assets/screens/4-record-history.png" alt="Version history timeline for a single record, with insert/update/revert badges" />
+              <img data-tour-img="history"
+                   data-light="assets/screens/4a-record-history-light.png"
+                   data-dark="assets/screens/4b-record-history-dark.png"
+                   src="assets/screens/4a-record-history-light.png"
+                   alt="Version history timeline for a single record, with insert/update/revert badges" />
             </div>
           </div>
           <p class="tour__caption"><span class="badge">03</span> Version history — every edit stored forever, any version revertable in one click.</p>
@@ -288,9 +303,17 @@
             <div class="frame__chrome">
               <span class="frame__dots"><span></span><span></span><span></span></span>
               <span class="frame__url">mdm.internal.example.com / audit</span>
+              <span class="frame__modeswitch" role="tablist" aria-label="Preview theme">
+                <button class="is-active" data-tour-mode="light" type="button">Light</button>
+                <button data-tour-mode="dark" type="button">Dark</button>
+              </span>
             </div>
             <div class="frame__body">
-              <img src="assets/screens/5-audit-log.png" alt="System-wide audit log listing user actions with timestamps and filters" />
+              <img data-tour-img="audit"
+                   data-light="assets/screens/5a-audit-log-light.png"
+                   data-dark="assets/screens/5b-audit-log-dark.png"
+                   src="assets/screens/5a-audit-log-light.png"
+                   alt="System-wide audit log listing user actions with timestamps and filters" />
             </div>
           </div>
           <p class="tour__caption"><span class="badge">04</span> Audit log — a filterable trail of every action across every schema and user.</p>
@@ -395,7 +418,7 @@
       <div class="oss__left">
         <div class="stat-row" style="margin-top:0;">
           <div class="stat"><b>MIT</b><span>License</span></div>
-          <div class="stat"><b>0.6.0</b><span>Latest release</span></div>
+          <div class="stat"><b>0.6.1</b><span>Latest release</span></div>
           <div class="stat"><b>0</b><span>Telemetry calls</span></div>
           <div class="stat"><b>PostgreSQL</b><span>Backend</span></div>
         </div>
@@ -515,12 +538,12 @@
     });
   });
 
-  // Tour records light/dark switcher
+  // Tour light/dark switchers (one per panel)
   document.querySelectorAll('[data-tour-mode]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-tour-mode]').forEach(b => b.classList.remove('is-active'));
+      btn.closest('.frame__modeswitch').querySelectorAll('[data-tour-mode]').forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      const img = document.querySelector('[data-tour-img="records"]');
+      const img = btn.closest('.frame').querySelector('[data-tour-img]');
       img.src = btn.dataset.tourMode === 'dark' ? img.dataset.dark : img.dataset.light;
     });
   });
