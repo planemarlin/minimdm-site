@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>miniMDM — A minimal, open-source Master Data Management app</title>
-<meta name="description" content="Define data objects in YAML, manage records through a clean web UI or REST API, with full versioning, audit log, and role-based access control. Self-hosted, MIT licensed, zero telemetry." />
+<meta name="description" content="Define data objects in YAML, manage records through a clean web UI or REST API, with full versioning, audit log, role-based access control, and inbound webhook sync. Self-hosted, MIT licensed, zero telemetry." />
 <meta property="og:title" content="miniMDM — A minimal, open-source Master Data Management app" />
-<meta property="og:description" content="Self-hosted MDM with versioning, audit log, RBAC and a REST API. Define your schema in YAML. MIT licensed. Zero telemetry." />
+<meta property="og:description" content="Self-hosted MDM with versioning, audit log, RBAC, inbound webhook sync and a REST API. Define your schema in YAML. MIT licensed. Zero telemetry." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minimdm.dev" />
 <meta property="og:image" content="https://minimdm.dev/assets/og-image.png" />
@@ -50,7 +50,7 @@
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="hero__eyebrow"><span class="dot"></span> v0.6.3 · MIT licensed</span>
+      <span class="hero__eyebrow"><span class="dot"></span> v0.7.0 · MIT licensed</span>
       <h1 class="hero__title">Master data management, <em>without the mainframe.</em></h1>
       <p class="hero__lede">
         miniMDM is a minimal, self-hosted application for curating the records your business runs on — customers, products, locations, anything. Define your schema in YAML, edit through a clean web UI or REST API, and get versioning, audit trails and access control out of the box.
@@ -139,6 +139,14 @@
         </div>
         <h3 class="feature__title">Source &amp; provenance tracking</h3>
         <p class="feature__body">Every golden record carries its origin — which source system it came from (ERP, CRM, warehouse, or any other upstream) and its ID in that system. Provenance is captured at import or creation, preserved in every history snapshot, and filterable from both the UI and API. Know not just what your master data says, but exactly where it came from.</p>
+      </article>
+
+      <article class="feature feature--full">
+        <div class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        </div>
+        <h3 class="feature__title">Inbound webhook receiver</h3>
+        <p class="feature__body">Let upstream systems push records into miniMDM the moment they change, instead of waiting on the next scheduled import. Every inbound push lands as a draft, so nothing reaches the golden record without going through your normal review and publish flow. Incoming records are matched to existing ones automatically, with a fallback match on a business key of your choosing, and any fields you've enriched locally are left untouched by the sync.</p>
       </article>
 
       <article class="feature">
@@ -418,7 +426,7 @@
       <div class="oss__left">
         <div class="stat-row" style="margin-top:0;">
           <div class="stat"><b>MIT</b><span>License</span></div>
-          <div class="stat"><b>0.6.3</b><span>Latest release</span></div>
+          <div class="stat"><b>0.7.0</b><span>Latest release</span></div>
           <div class="stat"><b>0</b><span>Telemetry calls</span></div>
           <div class="stat"><b>PostgreSQL</b><span>Backend</span></div>
         </div>
