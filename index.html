@@ -50,7 +50,7 @@
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="hero__eyebrow"><span class="dot"></span> v0.8.1 · MIT licensed</span>
+      <span class="hero__eyebrow"><span class="dot"></span> v0.8.2 · MIT licensed</span>
       <h1 class="hero__title">Master data management, <em>without the mainframe.</em></h1>
       <p class="hero__lede">
         miniMDM is a minimal, self-hosted application for curating the records your business runs on — customers, products, locations, anything. Define your schema in YAML, edit through a clean web UI or REST API, and get versioning, audit trails and access control out of the box.
@@ -130,7 +130,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/></svg>
         </div>
         <h3 class="feature__title">Record lifecycle management</h3>
-        <p class="feature__body">Move records through draft → active → retired states without breaking API consumers. Edits create an isolated draft copy; publishing promotes it back to the golden master record. Retired records are excluded from default API responses but never deleted. Governance rules can enforce draft review before activation, prevent retirement of stable reference data, or require explicit approval for bulk imports. Webhook callbacks fire on every transition so downstream systems stay in sync.</p>
+        <p class="feature__body">Move records through draft → active → retired states without breaking API consumers. Edits create an isolated draft copy; publishing promotes it back to the golden master record. Retired records are excluded from default API responses but never deleted. Governance rules can enforce draft review before activation, prevent retirement of stable reference data, or require explicit approval for bulk imports. Webhook callbacks fire on every transition so downstream systems stay in sync. Publishers see how many drafts are waiting in each object right from the sidebar.</p>
       </article>
 
       <article class="feature feature--wide">
@@ -434,7 +434,7 @@
       <div class="oss__left">
         <div class="stat-row" style="margin-top:0;">
           <div class="stat"><b>MIT</b><span>License</span></div>
-          <div class="stat"><b>0.8.1</b><span>Latest release</span></div>
+          <div class="stat"><b>0.8.2</b><span>Latest release</span></div>
           <div class="stat"><b>0</b><span>Telemetry calls</span></div>
           <div class="stat"><b>PostgreSQL</b><span>Backend</span></div>
         </div>
